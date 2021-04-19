@@ -3,6 +3,7 @@
 <@c.page>
 <i>Main page</i>
 <@l.logout/>
+    <span><a href="/user"> Users Lists </a></span>
 <div>
     <form method="post" action="">
         <input type="text" name="text" placeholder="Please write your message">
@@ -13,7 +14,7 @@
 </div>
 <div>Message list</div>
 <form method="get" action="/main">
-    <input type="text" name="filter" value="${filter}">
+    <input type="text" name="filter" value="${filter!}">
     <button type="submit">Search</button>
 </form>
 <#list messages as message>
