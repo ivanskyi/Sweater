@@ -6,7 +6,7 @@
                 <input type="text" class="form-control" name="username"  placeholder="User name"/>
             </div>
         </div>
-        <#if isRegisterForm>
+        <#if !isRegisterForm>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" >Password:</label>
                 <div class="col-sm-5">

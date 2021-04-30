@@ -55,11 +55,13 @@ public class MainController {
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file ) throws IOException {
         Message message = new Message(text, tag, user);
+
         if(file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
             if(!uploadDir.exists()) {
                 uploadDir.mkdir();
             }
+
             String uuidFile = UUID.randomUUID().toString();
             String resultFilename = uuidFile + "." + file.getOriginalFilename();
             file.transferTo(new File(uploadPath + "/" + resultFilename));
